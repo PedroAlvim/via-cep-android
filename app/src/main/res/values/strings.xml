@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Via Cep</string>
+    <string name="cep">Cep</string>
+    <string name="search_cep">Buscar Cep</string>
+    <string name="logradouro">Logradouro</string>
+    <string name="bairro">Bairro</string>
+    <string name="city">Cidade</string>
+    <string name="estado">Estado</string>
+    <string name="cep_empty">"Preencha o cep!"</string>
+</resources>
