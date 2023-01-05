@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.viacep.api.Api
 import com.example.viacep.databinding.ActivityMainBinding
-import com.example.viacep.model.EnderecoModel
+import com.example.viacep.model.AddressModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -35,28 +35,28 @@ class MainActivity : AppCompatActivity() {
             .create(Api::class.java)
 
         binding.btnSearchCep.setOnClickListener {
-            val cep = binding.editTextCep.text.toString()
+            val cep = binding.cep.text.toString()
 
             if (cep.isEmpty()) {
                 Toast.makeText(this, getString(R.string.cep_empty), Toast.LENGTH_SHORT).show()
             } else {
 
-                retrofit.setEndereco(cep).enqueue(object : Callback<EnderecoModel>{
+                retrofit.setEndereco(cep).enqueue(object : Callback<AddressModel>{
                     override fun onResponse(
-                        call: Call<EnderecoModel>,
-                        response: Response<EnderecoModel>
+                        call: Call<AddressModel>,
+                        response: Response<AddressModel>
                     ) {
                        if(response.code() == 200){
-                           binding.editTextLogradouro.setText(response.body()?.logradouro)
-                           binding.editTextBairro.setText(response.body()?.bairro)
-                           binding.editTextCity.setText(response.body()?.localidade)
-                           binding.editTextEstado.setText(response.body()?.uf)
+                           binding.location.setText(response.body()?.location)
+                           binding.neighborhood.setText(response.body()?.neighborhood)
+                           binding.city.setText(response.body()?.city)
+                           binding.uf.setText(response.body()?.uf)
                        }else{
                            Toast.makeText(this@MainActivity, "não foi possivel realizar a busca", Toast.LENGTH_SHORT).show()
                        }
                     }
 
-                    override fun onFailure(call: Call<EnderecoModel>, t: Throwable) {
+                    override fun onFailure(call: Call<AddressModel>, t: Throwable) {
                         Toast.makeText(this@MainActivity, "error in call", Toast.LENGTH_SHORT).show()
                     }
                 })

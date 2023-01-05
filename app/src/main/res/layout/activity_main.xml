@@ -28,7 +28,7 @@
                 app:hintTextColor="@color/teal_700">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edit_text_cep"
+                    android:id="@+id/cep"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/cep"
@@ -64,10 +64,10 @@
             app:hintTextColor="@color/teal_700">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_text_logradouro"
+                android:id="@+id/location"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/logradouro"
+                android:hint="@string/location"
                 android:inputType="text"
                 android:maxLines="1"
                 android:textCursorDrawable="@drawable/cursor_edittext" />
@@ -85,10 +85,10 @@
             app:hintTextColor="@color/teal_700">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_text_bairro"
+                android:id="@+id/neighborhood"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/bairro"
+                android:hint="@string/neighborhood"
                 android:inputType="text"
                 android:maxLines="1"
                 android:textCursorDrawable="@drawable/cursor_edittext" />
@@ -106,7 +106,7 @@
             app:hintTextColor="@color/teal_700">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_text_city"
+                android:id="@+id/city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/city"
@@ -128,11 +128,11 @@
             app:hintTextColor="@color/teal_700">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_text_estado"
+                android:id="@+id/uf"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:hint="@string/estado"
+                android:hint="@string/uf"
                 android:inputType="text"
                 android:maxLength="2"
                 android:textCursorDrawable="@drawable/cursor_edittext" />
